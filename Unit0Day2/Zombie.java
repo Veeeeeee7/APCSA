@@ -23,7 +23,7 @@ public class Zombie {
     private double height;
     private double weight;
     private int speed;
-    private boolean deadOrAlive;
+    private boolean dead;
     private String name;
 
     //java is a type-safe language
@@ -36,13 +36,63 @@ public class Zombie {
         height = newHeight;
         weight = newWeight;
         speed = newSpeed;
-        deadOrAlive = isDead;
+        dead = isDead;
         name = zombieName;
     }
 
     //if you forget or don't initialize a variable in your constructor, it will default to it's "false" value. For primitives, it's 0 or false (boolean), and for classes it's null (causing a null pointer exception)
 
+    //methods
+    public void speak(){
+        if(dead == true){
+            System.out.println("Braaaaaaaaaaaaaaaaaaaaaaaaains!");
+        }
+        else{
+            System.out.println("Good evening!");
+        }
+    }
+
+    //getters
+    public double getHeight() {
+        return height;
+    }
+    
+    public double getWeight() {
+        return weight;
+    }
+    
+    public int getSpeed() {
+        return speed;
+    }
+    
     public String getName() {
         return name;
     }
+
+    public boolean getDead() {
+        return dead;
+    }
+
+    //setters
+    public void setHeight(double newHeight) {
+        height = newHeight;
+    }
+
+    public void setWeight(double newWeight) {
+        weight = newWeight;
+    }
+
+    public void setSpeed(int newSpeed) {
+        speed = newSpeed;
+    }
+
+    public void setName(String newName) {
+        name = newName;
+    }
+
+    public void setDead(boolean isDead) {
+        dead = isDead;
+    }
 }
+
+

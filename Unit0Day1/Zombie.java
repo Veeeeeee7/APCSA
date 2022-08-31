@@ -23,7 +23,7 @@ public class Zombie {
     private double height;
     private double weight;
     private int speed;
-    private boolean deadOrAlive;
+    private boolean dead;
     private String name;
 
     //java is a type-safe language
@@ -36,7 +36,7 @@ public class Zombie {
         height = newHeight;
         weight = newWeight;
         speed = newSpeed;
-        deadOrAlive = isDead;
+        dead = isDead;
         name = zombieName;
     }
 
