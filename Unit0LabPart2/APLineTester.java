@@ -9,12 +9,13 @@ public class APLineTester {
 
         APLine pointLine = new APLine(p1, p2);
 
-        System.out.println(pointLine.getSlope());
-        System.out.println(pointLine.getSlopeFromPoints());
+        System.out.println("The slope of the line from a and b is: " + pointLine.getSlope());
+        System.out.println("The slope of the line from points is: " + pointLine.getSlopeFromPoints());
 
-        System.out.println(pointLine.isOnLine(p1));
-        System.out.println(pointLine.isOnLine(p2));
-        System.out.println(pointLine.isOnLine(p3));
-        System.out.println(pointLine.isOnLine(p4));
+        System.out.println("Point 1 is on the line? " + pointLine.isOnLine(p1));
+        System.out.println("Point 2 is on the line? " + pointLine.isOnLine(p2));
+        System.out.println("Point 3 is on the line? " + pointLine.isOnLine(p3));
+        System.out.println("Point 4 is on the line? " + pointLine.isOnLine(p4));
     }
 }
+
