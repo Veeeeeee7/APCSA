@@ -8,6 +8,6 @@ public class DogTester {
         System.out.println("The dog's age (" + dog.getAge() + ") in human years: " + dog.convertToHumanYears());
         dog.setAge(4);
         System.out.println("The dog's age (" + dog.getAge() + ") in human years: " + dog.convertToHumanYears());
-
+        System.out.println(dog.getDogIDCheck());
     }
 }

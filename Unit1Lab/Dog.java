@@ -1,4 +1,5 @@
 package Unit1Lab;
+import java.lang.Math;
 
 public class Dog {
     private String name;
@@ -12,7 +13,6 @@ public class Dog {
         this.age = age;
         this.legs = 4;
         this.dogID = dogID;
-        this.dogIDCheck = (char)(dogID%10 + (dogID/10)%10 + (dogID/100)%10 + 70);
     }
     
     //methods
@@ -30,6 +30,27 @@ public class Dog {
         else {
             return (this.age / 3) % 3 * 16 + (this.age - 1) % 3 * (16/3) + 13;
         }
+    }
+
+    public char getDogIDCheck() {
+        int count = 0;
+        int temp = 1;
+        while (temp <= dogID) {
+            temp *= 10;
+            count++;
+        }
+        int sum = 0;
+
+        for (int i = 1; i <= count; i++) {
+            if (i > 1) {
+                sum += (dogID/(Math.pow(10, i-1)))%10;
+            }
+            else {
+                sum += dogID%10;
+            }
+        }
+
+        return (char)(70+sum);
     }
 
     public char computeDogIDCheck() {
