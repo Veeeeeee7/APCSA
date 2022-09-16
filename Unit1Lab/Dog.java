@@ -4,11 +4,15 @@ public class Dog {
     private String name;
     private int age;
     final int legs;
+    private int dogID;
+    private char dogIDCheck;
 
-    public Dog(String name, int age) {
+    public Dog(String name, int age, int dogID) {
         this.name = name;
         this.age = age;
         this.legs = 4;
+        this.dogID = dogID;
+        this.dogIDCheck = (char)(dogID%10 + (dogID/10)%10 + (dogID/100)%10 + 70);
     }
     
     //methods
@@ -28,6 +32,10 @@ public class Dog {
         }
     }
 
+    public char computeDogIDCheck() {
+        return this.dogIDCheck;
+    }
+
     //setters
     public void setName(String name) {
         this.name = name;
@@ -37,6 +45,10 @@ public class Dog {
         this.age = age;
     }
 
+    public void setDogID(int dogID) {
+        this.dogID = dogID;
+    }
+
     //getters
     public String getName() {
         return this.name;
@@ -44,5 +56,9 @@ public class Dog {
 
     public int getAge() {
         return this.age;
+    }
+
+    public int getDogID() {
+        return this.dogID;
     }
 }
