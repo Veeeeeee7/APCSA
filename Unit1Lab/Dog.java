@@ -1,5 +1,4 @@
 package Unit1Lab;
-import java.lang.Math;
 
 public class Dog {
     private String name;
@@ -7,12 +6,15 @@ public class Dog {
     final int legs;
     private int dogID;
     private char dogIDCheck;
+    private String dogTag;
 
-    public Dog(String name, int age, int dogID) {
+    public Dog(String name, int age, int dogID, String dogTag) {
         this.name = name;
         this.age = age;
         this.legs = 4;
         this.dogID = dogID;
+        this.dogTag = dogTag;
+        this.dogIDCheck = DogHelper.computeDogIDCheck(dogID);
     }
     
     //methods
@@ -32,29 +34,9 @@ public class Dog {
         }
     }
 
-    public char getDogIDCheck() {
-        int count = 0;
-        int temp = 1;
-        while (temp <= dogID) {
-            temp *= 10;
-            count++;
-        }
-        int sum = 0;
-
-        for (int i = 1; i <= count; i++) {
-            if (i > 1) {
-                sum += (dogID/(Math.pow(10, i-1)))%10;
-            }
-            else {
-                sum += dogID%10;
-            }
-        }
-
-        return (char)(70+sum);
-    }
-
-    public char computeDogIDCheck() {
-        return this.dogIDCheck;
+    public String createDogTag() {
+        this.dogTag = Integer.toString(this.dogID) + dogIDCheck;
+        return this.dogTag;
     }
 
     //setters
@@ -70,6 +52,10 @@ public class Dog {
         this.dogID = dogID;
     }
 
+    public void setDogTag(String dogTag) {
+        this.dogTag = dogTag;
+    }
+
     //getters
     public String getName() {
         return this.name;
@@ -81,5 +67,13 @@ public class Dog {
 
     public int getDogID() {
         return this.dogID;
+    }
+
+    public char getDogIDCheck() {
+        return this.dogIDCheck;
+    }
+
+    public String getDogTag() {
+        return this.dogTag;
     }
 }
