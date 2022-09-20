@@ -12,7 +12,6 @@ public class DogHelper {
     }
 
     public static boolean checkDogTag(String dogTag) {
-        // return parseInt(dogTag) == (Integer.toString(dogID) +);
-        return false;
+        return computeDogIDCheck(Integer.parseInt(dogTag.substring(0, 3))) == (dogTag.charAt(3));
     }
 }

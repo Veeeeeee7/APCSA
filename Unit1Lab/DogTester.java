@@ -8,17 +8,21 @@ public class DogTester {
         System.out.println(wave.toString());
         Dog grapes = new Dog("grapes", 4, 631, "631P");
         System.out.println(grapes.toString());
-        System.out.println();
-        System.out.println(micro.getName() + " human years: " + micro.convertToHumanYears());
+
+        System.out.println("\n" + micro.getName() + " human years: " + micro.convertToHumanYears());
         System.out.println(wave.getName() + " human years: " + wave.convertToHumanYears());
         System.out.println(grapes.getName() + " human years: " + grapes.convertToHumanYears());
-        System.out.println();
-        System.out.println(micro.getName() + " ID Check: " + micro.getDogIDCheck());
+
+        System.out.println("\n" + micro.getName() + " ID Check: " + micro.getDogIDCheck());
         System.out.println(wave.getName() + " ID Check: " + wave.getDogIDCheck());
         System.out.println(grapes.getName() + " ID Check: " + grapes.getDogIDCheck());
-        System.out.println();
-        System.out.println(micro.getName() + " dog tag: " + micro.createDogTag());
+
+        System.out.println("\n" + micro.getName() + " dog tag: " + micro.createDogTag());
         System.out.println(wave.getName() + " dog tag: " + wave.createDogTag());
         System.out.println(grapes.getName() + " dog tag: " + grapes.createDogTag());
+
+        System.out.println("\n" + micro.getDogTag() + " is a real dog tag? " + DogHelper.checkDogTag(micro.getDogTag()));
+        System.out.println(wave.getDogTag() + " is a real dog tag? " + DogHelper.checkDogTag(wave.getDogTag()));
+        System.out.println(grapes.getDogTag() + " is a real dog tag? " + DogHelper.checkDogTag(grapes.getDogTag()));
     }
 }
