@@ -69,10 +69,6 @@ public class Dog {
         return this.dogID;
     }
 
-    public char getDogIDCheck() {
-        return this.dogIDCheck;
-    }
-
     public String getDogTag() {
         return this.dogTag;
     }

@@ -13,9 +13,9 @@ public class DogTester {
         System.out.println(wave.getName() + " human years: " + wave.convertToHumanYears());
         System.out.println(grapes.getName() + " human years: " + grapes.convertToHumanYears());
 
-        System.out.println("\n" + micro.getName() + " ID Check: " + micro.getDogIDCheck());
-        System.out.println(wave.getName() + " ID Check: " + wave.getDogIDCheck());
-        System.out.println(grapes.getName() + " ID Check: " + grapes.getDogIDCheck());
+        System.out.println("\n" + micro.getName() + " ID Check: " + DogHelper.computeDogIDCheck(micro.getDogID()));
+        System.out.println(wave.getName() + " ID Check: " + DogHelper.computeDogIDCheck(wave.getDogID()));
+        System.out.println(grapes.getName() + " ID Check: " + DogHelper.computeDogIDCheck(grapes.getDogID()));
 
         System.out.println("\n" + micro.getName() + " dog tag: " + micro.createDogTag());
         System.out.println(wave.getName() + " dog tag: " + wave.createDogTag());
@@ -24,5 +24,6 @@ public class DogTester {
         System.out.println("\n" + micro.getDogTag() + " is a real dog tag? " + DogHelper.checkDogTag(micro.getDogTag()));
         System.out.println(wave.getDogTag() + " is a real dog tag? " + DogHelper.checkDogTag(wave.getDogTag()));
         System.out.println(grapes.getDogTag() + " is a real dog tag? " + DogHelper.checkDogTag(grapes.getDogTag()));
+        System.out.println("586M is a real dog tag? " + DogHelper.checkDogTag("586M"));
     }
 }
