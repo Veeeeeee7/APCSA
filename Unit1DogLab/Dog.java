@@ -1,4 +1,4 @@
-package Unit1Lab;
+package Unit1DogLab;
 
 public class Dog {
     private String name;

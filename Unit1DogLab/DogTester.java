@@ -1,4 +1,4 @@
-package Unit1Lab;
+package Unit1DogLab;
 
 public class DogTester {
     public static void main(String[] args) {
