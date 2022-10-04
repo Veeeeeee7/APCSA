@@ -19,7 +19,7 @@ public class Dog {
     
     //methods
     public String toString() {
-        return "This dog's name is " + name + " and it is " + age + " years old.";
+        return "This dog's name is " + name + " and it is " + age + " years old, which is " + convertToHumanYears() + " years old in human years. Its dog ID Check is " + DogHelper.computeDogIDCheck(this.dogID) + " and its dog tag is: " + createDogTag();
     }
 
     public int convertToHumanYears() {

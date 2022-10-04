@@ -9,18 +9,6 @@ public class DogTester {
         Dog grapes = new Dog("grapes", 4, 631, "631P");
         System.out.println(grapes.toString());
 
-        System.out.println("\n" + micro.getName() + " human years: " + micro.convertToHumanYears());
-        System.out.println(wave.getName() + " human years: " + wave.convertToHumanYears());
-        System.out.println(grapes.getName() + " human years: " + grapes.convertToHumanYears());
-
-        System.out.println("\n" + micro.getName() + " ID Check: " + DogHelper.computeDogIDCheck(micro.getDogID()));
-        System.out.println(wave.getName() + " ID Check: " + DogHelper.computeDogIDCheck(wave.getDogID()));
-        System.out.println(grapes.getName() + " ID Check: " + DogHelper.computeDogIDCheck(grapes.getDogID()));
-
-        System.out.println("\n" + micro.getName() + " dog tag: " + micro.createDogTag());
-        System.out.println(wave.getName() + " dog tag: " + wave.createDogTag());
-        System.out.println(grapes.getName() + " dog tag: " + grapes.createDogTag());
-
         System.out.println("\n" + micro.getDogTag() + " is a real dog tag? " + DogHelper.checkDogTag(micro.getDogTag()));
         System.out.println(wave.getDogTag() + " is a real dog tag? " + DogHelper.checkDogTag(wave.getDogTag()));
         System.out.println(grapes.getDogTag() + " is a real dog tag? " + DogHelper.checkDogTag(grapes.getDogTag()));
