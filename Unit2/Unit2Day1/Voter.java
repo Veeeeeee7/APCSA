@@ -21,7 +21,7 @@ public class Voter {
 
         // System.out.println(!a || (b && c) ? "T" : "F");
         // System.out.println(a ? "a: T" : b ? "b: T" : c ? "c: T" : "F");
-        Voter bob = new Voter("Bob", 18, "California", "LA", false);
+        Voter bob = new Voter("Bob", 17, "California", "LA", false);
         System.out.println(bob.canVote());
     }
 
@@ -63,8 +63,24 @@ public class Voter {
         return false;
     }
 
-    public String canVote() {
-        return checkCARegistration() ? "You can vote!" : age < 18 ? "You are underage" : "You are not registered";
+    // public String canVote() {
+    //     return checkCARegistration() ? "You can vote!" : age < 18 ? "You are underage" : "You are not registered";
+    // }
+
+    public String canVote(){
+        if (state.equals("California") && age >= 18 && isRegistered){
+            return ("this voter can vote.");
+        }
+        else if (state.equals("California") && age >= 18 && !isRegistered){
+            return ("this voter can't vote because they haven't registered.");
+        }
+        else if (state.equals("California") && age < 18 && isRegistered){
+            return ("this voter can't vote because they are not 18.");
+        }
+        else if (!state.equals("California") && age >= 18 && isRegistered){
+            return ("this voter can't vote because they don't live in California.");
+        }
+        return ("this voter can't vote for more than one reason.");
     }
 
     //Getters and Setters
