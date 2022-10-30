@@ -57,11 +57,11 @@ public class ArrayOps {
     public static int[] countLetterFrequencies(String str) {
         int[] freq = new int[27];
         for (int i = 0; i < str.length(); i++) {
-            char c = str.charAt(i);
-            if (c >= 'A' && c <= 'Z') {
-                freq[c - 'A' + 1]++;
-            } else if (c >= 'a' && c <= 'z') {
-                freq[c - 'a' + 1]++;
+            char letter = str.charAt(i);
+            if (letter >= 'A' && letter <= 'Z') {
+                freq[letter - 'A' + 1]++;
+            } else if (letter >= 'a' && letter <= 'z') {
+                freq[letter - 'a' + 1]++;
             }
         }
         return freq;

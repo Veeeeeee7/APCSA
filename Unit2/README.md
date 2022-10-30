@@ -1,3 +1,3 @@
 # Unit 2
 
-GO BIG!
+GO BIG! Arrays
