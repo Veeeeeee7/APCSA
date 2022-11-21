@@ -15,25 +15,12 @@ public class GameManager {
     }
 
     public boolean didPlayerWin() {
-        if (player.getChoice().equals("rock")) {
-            if (computer.getChoice().equals("scissors")) {
-                return true;
-            } else {
-                return false;
-            }
-        } else if (player.getChoice().equals("paper")) {
-            if (computer.getChoice().equals("rock")) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            if (computer.getChoice().equals("paper")) {
-                return true;
-            } else {
-                return false;
-            }
+        if (player.getChoice().compareTo(computer.getChoice()) == -3
+                || (player.getChoice().compareTo(computer.getChoice()) >= 0
+                        && player.getChoice().compareTo(computer.getChoice()) <= 2)) {
+            return false;
         }
+        return true;
     }
 
     public String getPlayer() {
