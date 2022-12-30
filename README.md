@@ -1,4 +1,4 @@
 # APCSA
 
-Course Material for Advanced Placement Computer Science A
+Course Material for AP Computer Science A
 Notes, Homework, Labs, etc.
