@@ -7,9 +7,16 @@ public class SkyView {
         view = new double[numRows][numCols];
         int index = 0;
         for (int i = 0; i < numRows; i++) {
-            for (int j = 0; j < numCols; j++) {
-                view[i][j] = scanned[index];
-                index++;
+            if (i % 2 == 1) {
+                for (int j = numCols - 1; j >= 0; j--) {
+                    view[i][j] = scanned[index];
+                    index++;
+                }
+            } else {
+                for (int j = 0; j < numCols; j++) {
+                    view[i][j] = scanned[index];
+                    index++;
+                }
             }
         }
     }
