@@ -11,7 +11,7 @@ public class Triangle extends Polygon {
     }
 
     public double getArea() {
-        return (base * height) / 2;
+        return (double) (base * height) / 2;
     }
 
     public String toString() {
