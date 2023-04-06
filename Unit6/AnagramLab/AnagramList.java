@@ -20,6 +20,7 @@ public class AnagramList {
      */
     public void addWord(Word newWord) {
         // to be completed
+        wordList.add(newWord);
     }
 
     /**
@@ -29,6 +30,7 @@ public class AnagramList {
      */
     public boolean checkAnagram(Word aWord, Word anotherWord) {
         // to be completed
+        return aWord.getSortedWord().equals(anotherWord.getSortedWord());
     }
 
     /**
@@ -37,5 +39,11 @@ public class AnagramList {
      */
     public void printAnagrams(String key) {
         // to be completed
+        Word keyWord = new Word(key);
+        for (Word word : wordList) {
+            if (checkAnagram(keyWord, word)) {
+                System.out.println(word.getOriginalWord());
+            }
+        }
     }
 }

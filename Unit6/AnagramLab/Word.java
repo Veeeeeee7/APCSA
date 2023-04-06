@@ -42,14 +42,16 @@ public class Word {
         // To be completed
         char[] chars = originalWord.toCharArray();
         for (int index = 1; index < chars.length; index++) {
-            int key = numbers[index];
+            char key = chars[index];
             int position = index;
             // shift larger values to the right
-            while (position > 0 && numbers[position - 1] > key) {
-                numbers[position] = numbers[position - 1];
+            while (position > 0 && chars[position - 1] > key) {
+                chars[position] = chars[position - 1];
                 position--;
             }
-            numbers[position] = key;
+            chars[position] = key;
         }
+
+        return new String(chars);
     }
 }
