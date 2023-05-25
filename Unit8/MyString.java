@@ -134,12 +134,11 @@ public class MyString implements Comparable<MyString> {
     public MyString replace(MyString before, MyString after) {
         MyString[] split = splitWithSpace(before);
         MyString newStr = new MyString();
-        for (int i = 0; i < split.length; i++) {
+        for (int i = 0; i < split.length - 1; i++) {
             newStr = newStr.add(split[i]);
-            if (i < split.length - 1) {
-                newStr = newStr.add(after);
-            }
+            newStr = newStr.add(after);
         }
+        newStr = newStr.add(split[split.length - 1]);
         return newStr;
     }
 
@@ -185,20 +184,16 @@ public class MyString implements Comparable<MyString> {
 
     public MyString trim() {
         int front = 0;
-        int frontIndex = 0;
-        while (chars[frontIndex] == ' ') {
+        while (chars[front] == ' ') {
             front++;
-            frontIndex++;
         }
 
-        int back = 0;
-        int backIndex = chars.length - 1;
-        while (chars[backIndex] == ' ') {
-            back++;
-            backIndex--;
+        int back = chars.length - 1;
+        while (chars[back] == ' ') {
+            back--;
         }
 
-        char[] newStr = new char[chars.length - front - back];
+        char[] newStr = new char[chars.length - front - (chars.length - 1 - back)];
         for (int i = front; i < chars.length - back; i++) {
             newStr[i - front] = chars[i];
         }
@@ -263,12 +258,8 @@ public class MyString implements Comparable<MyString> {
         int num = 0;
         int sign = chars[0] == '-' ? 1 : 0;
         for (int i = sign; i < chars.length; i++) {
-            if (chars[i] >= '0' && chars[i] <= '9') {
-                num *= 10;
-                num += chars[i] - '0';
-            } else {
-                throw new NumberFormatException();
-            }
+            num *= 10;
+            num += chars[i] - '0';
         }
         return sign == 1 ? -num : num;
     }
