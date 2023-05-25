@@ -258,8 +258,11 @@ public class MyString implements Comparable<MyString> {
         int num = 0;
         int sign = chars[0] == '-' ? 1 : 0;
         for (int i = sign; i < chars.length; i++) {
-            num *= 10;
-            num += chars[i] - '0';
+            if (chars[i] > '0' && chars[i] < '9') {
+                num = num * 10 + (chars[i] - '0');
+            } else {
+                throw new NumberFormatException();
+            }
         }
         return sign == 1 ? -num : num;
     }
